@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
-<body>
-<img id="kevin" src="img/kevin.png/"></img>
+<body style="overflow: hidden;">
+<img id="kevin" src="img/kevin.png" style="width: 80%; position: absolute; right: 0px;">
 </body>
+
+<script>
+	window.onload = function() {
+		var kevin = document.getElementById("kevin");
+		var startPos = -1000;
+		var pos = startPos;	
+		var upId = setInterval(frameUp, 6);
+		var downId = null;
+		function frameUp() {
+			if (pos === 0) {
+				clearInterval(upId);
+				downId = setInterval(frameDown, 10);
+			} else {
+				pos++;
+				kevin.style.bottom = pos + 'px';
+			}
+		}
+
+		function frameDown() {
+			if(pos === startPos) {
+				clearInterval(downId);
+			} else {
+				pos--;
+				kevin.style.bottom = pos + 'px';
+			}
+		}
+	};
+</script>
 </html>

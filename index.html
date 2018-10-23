@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body style="overflow: hidden;">
-<img id="kevin" src="img/kevin.png" style="width: 80%; position: absolute; right: 0px;">
+<img id="kevin" src="img/kevin.png" style="width: 100%; position: absolute; right: 0px;">
 </body>
 
 <script>
@@ -9,12 +9,14 @@
 		var kevin = document.getElementById("kevin");
 		var startPos = -1000;
 		var pos = startPos;	
-		var upId = setInterval(frameUp, 6);
+		var upId = setInterval(frameUp, 10);
 		var downId = null;
 		function frameUp() {
 			if (pos === 0) {
 				clearInterval(upId);
-				downId = setInterval(frameDown, 10);
+				setTimeout(function() {
+					downId = setInterval(frameDown, 15);
+				}, 1000);
 			} else {
 				pos++;
 				kevin.style.bottom = pos + 'px';

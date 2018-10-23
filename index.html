@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body style="overflow: hidden;">
-<img id="kevin" src="img/kevin.png" style="width: 100%; position: absolute; right: 0px;">
+<img id="kevin" src="img/kevin.png" style="width: 90%; position: absolute; right: 0px;">
 </body>
 
 <script>
 	window.onload = function() {
 		var kevin = document.getElementById("kevin");
-		var startPos = -1000;
+		var startPos = '-' + kevin.clientHeight;
 		var pos = startPos;	
 		var upId = setInterval(frameUp, 8);
 		var downId = null;

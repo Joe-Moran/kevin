@@ -9,13 +9,13 @@
 		var kevin = document.getElementById("kevin");
 		var startPos = -1000;
 		var pos = startPos;	
-		var upId = setInterval(frameUp, 10);
+		var upId = setInterval(frameUp, 8);
 		var downId = null;
 		function frameUp() {
 			if (pos === 0) {
 				clearInterval(upId);
 				setTimeout(function() {
-					downId = setInterval(frameDown, 15);
+					downId = setInterval(frameDown, 10);
 				}, 1000);
 			} else {
 				pos++;
